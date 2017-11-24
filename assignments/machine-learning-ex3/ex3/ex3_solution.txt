@@ -1,0 +1,12 @@
+Ex 3
+----
+Multi Class classification problem - 10 class (0 to 9)
+Two techniques to solve this
+1. Using One vs All logisitic regression implementation with regularization
+2. Neural networks 
+
+Load the training data set into X and y
+X is a 20*20 images to predict a number between 0 to 9 So output will be 
+
+Select a random theta value and improve the hypothesis
+[-2; -1; 1; 2]
