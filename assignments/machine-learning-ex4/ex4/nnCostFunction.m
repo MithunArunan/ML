@@ -68,16 +68,17 @@ Theta2_grad = zeros(size(Theta2));
 %Theta2 = num_labels * (hidden_layer_size + 1)
 %D3 = m * num_labels
 %D2 = m * hidden_layer_size
-%D1 = m * input_layer_size
+
 X = [ones(m, 1) X];
 Y = repmat(y(:),1,num_labels) == repmat(1:num_labels,m,1);
 
-z1 = X * Theta1';
-a1 = sigmoid(z1);
-a1 = [ones(m, 1) a1];
-z2 = a1 * Theta2';
+a1 = X;
+z2 = X * Theta1';
 a2 = sigmoid(z2);
-H = a2;
+a2 = [ones(m, 1) a2];
+z3 = a2 * Theta2';
+a3 = sigmoid(z3);
+H = a3;
 
 J = sum(((Y .* log(H)) + (1 - Y) .* log(1 - H)));
 REG1 = sum(sum(Theta1(:,2:end).^2)) + sum(sum(Theta2(:,2:end).^2));
@@ -87,12 +88,19 @@ J = (-sum(J)/m) + REG;
 
 %Gradients computation
 D3 = H - Y;
-%size(D3)
-%size(Theta2)
-%size(z1)
-D2 = D3 * Theta2(:,2:end);
-D2 = D2.* sigmoidGradient(z1);
-%size(D2)
+D2 = D3 * Theta2;
+D2 = D2(:,2:end).* sigmoidGradient(z2);
+
+T1 = zeros();
+T2 = zeros();
+
+T1 = T1 + D2'*a1;
+T2 = T2 + D3'*a2;
+
+Theta1_grad = T1./m;
+Theta2_grad = T2./m;
+size(Theta1_grad);
+size(Theta2_grad);
 % =========================================================================
 
 % Unroll gradients
