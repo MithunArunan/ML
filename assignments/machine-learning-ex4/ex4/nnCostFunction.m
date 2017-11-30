@@ -64,21 +64,35 @@ Theta2_grad = zeros(size(Theta2));
 %X = m * (input_layer_size+1) add bias?
 %Y = m * num_labels convert to label vector? 
 %H = m * num_labels
+%Theta1 = hidden_layer_size * (input_layer_size + 1)
+%Theta2 = num_labels * (hidden_layer_size + 1)
+%D3 = m * num_labels
+%D2 = m * hidden_layer_size
+%D1 = m * input_layer_size
 X = [ones(m, 1) X];
 Y = repmat(y(:),1,num_labels) == repmat(1:num_labels,m,1);
 
-a = sigmoid(X * Theta1');
-a = [ones(m, 1) a];
-H = sigmoid(a * Theta2');
+z1 = X * Theta1';
+a1 = sigmoid(z1);
+a1 = [ones(m, 1) a1];
+z2 = a1 * Theta2';
+a2 = sigmoid(z2);
+H = a2;
 
 J = sum(((Y .* log(H)) + (1 - Y) .* log(1 - H)));
-%for each layer 
-%for each unit in the layer compute ji (excluding the bias unit)
-
 REG1 = sum(sum(Theta1(:,2:end).^2)) + sum(sum(Theta2(:,2:end).^2));
 REG = ((lambda / 2) / m) * REG1;
 J = (-sum(J)/m) + REG; 			
 
+
+%Gradients computation
+D3 = H - Y;
+%size(D3)
+%size(Theta2)
+%size(z1)
+D2 = D3 * Theta2(:,2:end);
+D2 = D2.* sigmoidGradient(z1);
+%size(D2)
 % =========================================================================
 
 % Unroll gradients
