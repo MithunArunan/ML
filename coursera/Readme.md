@@ -159,23 +159,23 @@ Vectorization
 Ex1.1 WarmUpExercise()
 
 Ex1.2 Linear regression with one variable
+
+```matlab
 H = (theta'*X')';
 S = sum((H - y) .^ 2);
 J = S / (2*m);
+```
+
 To predict the profits for a food truck with various cities population & profits data.
 
 Training dataset
 It's a linear regression problem with one feature (population). With the training data set of population and profits, we need to create a hypothesis function with minimum cost function. Feature normalization technique?
 
-Plotting the data.
-What plot? Scatter plot?
-
 Linear regression with multiple variables
 
-Assignments in git
-
 ## WEEK 3 - Logistic regression
-Classification problem
+
+#### Classification problem
 Binary classification problem - Negative class or Positive class
 Multi class problem
 
@@ -208,12 +208,12 @@ Solving the fitting problem & Regularization (in linear and logistic regression)
 Underfitting  - High bias
 Overfitting - High Variance  - Makes accurate predictions on the training set but doesn't generalize well on the new predictions
 
-Addressing overfitting problem.
+##### Addressing overfitting problem.
 1. Plotting the hypothesis to understand it
 2. Reduce the no. of features - Manually pick features or use model selection algorithm
 3. Regularization - Keep all the features but reduce the magnitude of the feature
 
-Regularization
+#### Regularization
 Smaller values of theta - Simpler hypothesis, less prone to overfitting
 Adding a regularization parameter (lambda) to reduce the value of theta - to balance between underfitting and overfitting
 
