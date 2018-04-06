@@ -16,6 +16,8 @@ P - probability of winning the game.
 Housing price prediction - Regression model - predicting continuous valued output
 Breast cancer - Malign/Benign - Classification model - predicting Discrete valued output
 
+##### Regression
+
 ##### Classification
 Email accounts of the company is hacked or not
 House with a certain price sells less or more?
@@ -66,7 +68,7 @@ Linear Algebra Review -matrices and vectors.
 
 ## WEEK 2
 
-#### Installing Matlab and Octave  - GUI
+#### Installing Matlab and Octave - GUI
 
 #### Multivariate linear regression
 y Housing price ($) prediction based on
