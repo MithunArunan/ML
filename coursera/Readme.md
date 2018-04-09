@@ -383,6 +383,41 @@ Choosing the degree of polynomial -- d and Train error/CV error
 Choosing the regularization parameter -- lambda and Train error/CV error
 Learning curves - w.r.t dataset size (m)
 
-Building a spam classifier
+#### Building a spam classifier
 Prioritising what to work on -
-Error Analysis
+
+Given a data set of emails, we could construct a vector for each email. Each entry in this vector represents a word. The vector normally contains 10,000 to 50,000 entries gathered by finding the most frequently used words in our data set. If a word is to be found in the email, we would assign its respective entry a 1, else if it is not found, that entry would be a 0. Once we have all our x vectors ready, we train our algorithm and finally, we could use it to classify if an email is a spam or not.
+
+
+#### Error Analysis
+
+#### Error metrics for Skewed classes
+For cancer classification problem, with classifiers cancer or not.
+The training dataset contains only 0.5% patients with cancer.
+Classes are skewed, here accuracy of 99% is not a good measure of the classifier accuracy. Non learning algo that predicts not cancer for all patients has a better accuracy of 99.5%
+
+| Predicted//Actual  | 1      | 0     |
+| ------------- |:-------------:| -----:    |
+| 1      | True positive        | False positive     |
+| 0  |   False negative    |       True negative   |
+
+###### Accuracy
+Accuracy = (true positives + true negatives) / (total examples)
+
+###### Precision
+Precision = (true positives) / (true positives + false positives)
+Of number of people predicted as cancer, what fraction actually has cancer
+
+###### Recall
+Recall = (true positives) / (true positives + false negatives)
+Of number of people actually having cancer, what fraction predicted having cancer
+
+###### F1 Score
+f1_score = (2 * precision * recall) / (precision + recall)
+
+#### Trading off precision and recall
+
+
+#### Data for machine learning
+
+## WEEK 7 - Support Vector Machines
