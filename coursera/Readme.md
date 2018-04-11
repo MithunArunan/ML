@@ -412,12 +412,42 @@ Of number of people predicted as cancer, what fraction actually has cancer
 Recall = (true positives) / (true positives + false negatives)
 Of number of people actually having cancer, what fraction predicted having cancer
 
+#### Trading off precision and recall
+To determine the algorithm with good precision and recall, we need to find it's f1 score
+
 ###### F1 Score
 f1_score = (2 * precision * recall) / (precision + recall)
-
-#### Trading off precision and recall
-
 
 #### Data for machine learning
 
 ## WEEK 7 - Support Vector Machines
+
+SVM gives much more clear and powerful ways of learning complex non linear functions than neural networks and logistic regression.
+
+#### Large margin classification
+
+Optimisation objective
+
+Large margin intuition
+SVM decision boundary - Linearly separable space called as Large Margin
+
+Mathematics behind large margin intuition
+
+#### Kernels
+
+Pick some landmarks - l1, l2, l3
+Evaulate the features f1, f2, f3 - similarity(x, l(i)) using gaussian kernels or Kernels
+
+How to pick landmarks?
+x1 = l1, pick m number of landmarks wherein x(i) = l(i)
+
+SVM parameters - Bias and Variance
+C = 1/lambda
+Large C - lower bias, higher variance - Overfitting
+Lower C - higher bias, lower variance - Underfitting
+
+sigma square
+Large sigma square - Higher bias, lower variance - Underfitting
+Small sigma square - lower bias, higher variance - Overfitting
+
+#### SVMs in practice
