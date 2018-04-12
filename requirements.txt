@@ -1,0 +1,4 @@
+tensorflow
+gensim
+scikit-learn
+pyemd

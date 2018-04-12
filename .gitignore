@@ -1,3 +1,4 @@
 tools
 20news-bydate-test/
 20news-bydate-train/
+.venv/
