@@ -451,3 +451,14 @@ Large sigma square - Higher bias, lower variance - Underfitting
 Small sigma square - lower bias, higher variance - Overfitting
 
 #### SVMs in practice
+
+Linear kernel - No kernel
+Predict y = 1, Theta * X >= 0
+
+Gaussian kernel
+
+SVM vs logistic regression
+
+if n is large, relative to m (n = 10000, m=10...1000) ==> Use logistic regression or linear SVM
+if n is small, m is intermediate (n = 1...1000, m = 10...10000) ==> Use SVM with gaussian kernel
+if n is small, m is large (n = 1...1000, m = 50000+) ==> Linear SVM or logistic regression
