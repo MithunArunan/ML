@@ -2,3 +2,6 @@ tools
 20news-bydate-test/
 20news-bydate-train/
 .venv/
+*.mp3
+*.wav
+*.csv

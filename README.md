@@ -3,3 +3,5 @@
 [Google ML - Crash course](https://developers.google.com/machine-learning/crash-course/)
 
 [Google - AI education](https://ai.google/education)
+
+[ML - Engineering rules](https://developers.google.com/machine-learning/rules-of-ml/)
